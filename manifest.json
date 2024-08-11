@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Amazon Price Tracker",
+    "version": "1.0",
+    "description": "Track price drops in your Amazon wishlist",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "tabs"
+    ],
+    "host_permissions": [
+      "https://www.amazon.in/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.amazon.in/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
